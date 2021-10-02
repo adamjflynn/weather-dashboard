@@ -8,7 +8,7 @@ fetch(apiUrl).then(function(response) {
         // pass response data to dom function
         console.log(data)
       });
-    }
+    } 
     else {
       alert("There was a problem with your request!");
     }
