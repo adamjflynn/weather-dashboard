@@ -1,4 +1,24 @@
-var searchBtn = $(".SearchBtn");
+
+// variables
+var serahCity = $("#search-city");
+var searchBtn = $("#SearchBtn");
+var clearBtn = $("#clearBtn");
+var currentCity = $("#current-city");
+var currentTemp = $("#temperature");
+var currentHumidity = $("#humidity");
+var currentWind = $("#wind-speed");
+var currentUVindex = $("#uv-index");
+var sCity=[];
+
+// search city
+function find(c){
+  for (var i=0; i<sCity.length; i++){
+    if(c.toUpperCase()===sCity[i]){
+      return -1;
+    }
+  }
+  return 1;
+}
 
 var apiKey = "13262dbca390ca4dac33875e934250c9"
 
@@ -24,19 +44,6 @@ if (searchInput == "") {
     method: "GET"
   }).then(function (response) {
     var cityName = $(".list-group").addClass("list-group-item");
-    
-  }
-})
+    cityName.append("<li>" + response.name + "</li>");
 
-fetch(apiKey).then(function(response) {
-    // request was successful
-    if (response.ok) {
-      response.json().then(function(data) {
-        // pass response data to dom function
-        console.log(data)
-      });
-    } 
-    else {
-      alert("There was a problem with your request!");
-    }
-  });
+  })
