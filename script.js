@@ -2,13 +2,13 @@
 var city="";
 // variables
 var searchCity = $("#search-city");
-var searchBtn = $("#SearchBtn");
+var searchBtn = $("#searchBtn");
 var clearBtn = $("#clearBtn");
 var currentCity = $("#current-city");
-var currentTemp = $("#temperature");
+var currentTemperature = $("#temperature");
 var currentHumidity = $("#humidity");
 var currentWind = $("#wind-speed");
-var currentUVindex = $("#uv-index");
+var currentUvindex = $("#uv-index");
 var sCity=[];
 // search city
 function find(c){
@@ -47,18 +47,19 @@ function currentWeather(city){
 
     $(currentCity).html(response.name +"("+date+")" + "<img src="+iconurl+">");
 
-     var tempF = (repsonse.main.temp - 273.15) * 1.80 + 32;
-     $(currentTemp).html((tempF).toFixed(2)+"&#8457");
+     var tempF = (response.main.temp - 273.15) * 1.80 + 32;
+     $(currentTemperature).html((tempF).toFixed(2)+"&#8457");
 
      $(currentHumidity).html(response.main.humidity+"%");
 
      var ws=response.wind.speed;
-     var windsmph=(ws*2.237)(windsmph+"MPH");
+     var windsmph=(ws*2.237).toFixed(1);
+     $(currentWind).html(windsmph+"MPH");
 
-     currentUVindex(repsonse.coord.lon,response.coorde.lat);
+     UVIndex(response.coord.lon,response.coord.lat);
      forecast(response.id);
      if(response.cod==200){
-       sCity=JSON.parse(localstorage.getItem("cityname"));
+       sCity=JSON.parse(localStorage.getItem("cityname"));
        console.log(sCity);
        if (sCity==null){
            sCity=[];
@@ -85,7 +86,7 @@ function UVIndex(ln,lt){
     url:uvqURL,
     method:"GET"
   }).then(function(response){
-    $(currentUVindex).html(response.value);
+    $(UVIndex).html(response.value);
   });
 }
 
@@ -154,6 +155,6 @@ function clearHistory(event){
 
 $("#searchBtn").on("click",displayWeather);
 $(document).on("click",invokePastSearch);
-$(window).on("load",laodlastCity);
+$(window).on("load",loadlastCity);
 $("#clear-history").on("click",clearHistory);
 
