@@ -10,24 +10,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="jumbotron container-fluid mt-2 text-center p-2" style="background-color:#404040 ;color: white;">
+    <div class="jumbotron container-fluid mt-2 text-center p-2" style="background-color: #007BFF; color: white;">
         <h1> <strong>Weather Dashboard</strong></h1>
     </div>
     <div class="container">
-        <!-- city search row -->
+        <!-- city search -->
         <div class="row">
-            <div class="col-sm-4 bg-light">
-                <!-- input element -->
+            <div class="col-sm-4">
+                <!-- input HTML -->
                 <h4 class="pt-1"><strong>Search for a City:</strong></h4>
-                <!-- text box for the search city Name-->
+                <!-- text input box for city search -->
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control"id="search-city" aria-label="City Search" aria-describedby="searchBtn">
+                    <input type="text" class="form-control"id="search-city" aria-label="City Search" aria-describedby="search-button">
                     <div class="input-group-append">
-                        <button class=" btn bg-primary text-light" id="searchBtn"><i class="fa fa-search"></i></button>
+                        <button class=" btn bg-primary text-light" id="search-button"><i class="fa fa-search"></i></button>
                     </div>
                 </div>
-                <!--section for search city history-->
-                <button class=" btn btn-primary" type="button" id="clearBtn">Clear history</button>
+                <!-- section for search city history -->
+                <button class=" btn btn-primary" type="button" id="clear-history">Clear history</button>
                 <ul class="list-group">
 
                 </ul>
@@ -42,8 +42,8 @@
                         <p>UV index:<span class="current bg-danger rounded py-2 px-2 text-white" id="uv-index"></span></p> 
                     </div>
                 </div>
-                <!--Row for future data to be dumped here-->
-                <div class="col-sm-12" id="future-weather">
+                <!-- row for 5 day -->
+                <div class="col-sm-12" id ="future-weather">
                     <h3>5-Day Forecast:</h3>
                     <div class="row text-light">
                         <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
@@ -82,10 +82,9 @@
             </div>
         </div>
     </div>
-	    <!--jQuery JS-->
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-    <!--Code to Jvascript File-->
     <script src="script.js"></script>
 </body>
 </html>
