@@ -11,4 +11,4 @@ The purpose of this assignment was to create a weather dashboard for the user to
 
 Link to the deployed application [Weather-Dashboard] (https://adamjflynn.github.io/weather-dashboard/) site.
 
-![image](C:\Users\Adam\OneDrive\Desktop\coding\projects\Challenge_6\weather-dashboard\weather-dashboard.JPG)
+![image](https://github.com/adamjflynn/weather-dashboard/blob/main/weather-dashboard.JPG?raw=true)
