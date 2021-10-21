@@ -9,6 +9,6 @@ The purpose of this assignment was to create a weather dashboard for the user to
 - Moment.js
 - OpenWeather API
 
-Link to the deployed application [Weather-Dashboard] (https://adamjflynn.github.io/weather-dashboard/) site.
+Link to the deployed application [Weather-Dashboard](https://adamjflynn.github.io/weather-dashboard/) site.
 
 ![image](https://github.com/adamjflynn/weather-dashboard/blob/main/weather-dashboard.JPG?raw=true)
